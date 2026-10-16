@@ -1,12 +1,7 @@
-/*
-  Connected to the GitHub repository you shared.
-  IMPORTANT: this repository currently has no published Releases.
-  Add the Windows .exe and Android .apk as release assets for the buttons
-  to download actual builds.
-*/
+/* Set these to your public GitHub repository details. */
 window.NEXORA_CONFIG = {
-  owner: "Techman-cyber",
-  repo: "Nexora",
+  owner: "YOUR_GITHUB_USERNAME",
+  repo: "YOUR_NEXORA_REPOSITORY",
   desktopAssetPattern: /\.exe$/i,
   androidAssetPattern: /\.apk$/i
 };

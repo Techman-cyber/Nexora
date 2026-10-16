@@ -1,0 +1,1 @@
+Place your favicon image here and name it exactly: favicon.png
