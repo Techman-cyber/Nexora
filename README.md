@@ -1,19 +1,22 @@
-# Nexora Browser — Download Website
+# Nexora Browser — Official Website
 
-A responsive landing page for Nexora with a dark editorial UI, feature/value messaging, platform download cards, and live GitHub Release asset detection.
+A responsive product landing page for Nexora Browser, inspired by the editorial storytelling, large product visuals, feature showcases, and multi-platform download flow used by polished browser brands. This is an original Nexora design and does not use Opera branding or assets.
 
 ## Files
-- `index.html` — page structure and copy
-- `style.css` — responsive visual design
-- `script.js` — mobile navigation and release asset detection
-- `config.js` — GitHub repository and asset patterns
-- `assets/Nexora.png` — Nexora logo used throughout the site and as the favicon
+- `index.html` — website structure and product showcase
+- `style.css` — responsive visual design, animation, and browser/device mockups
+- `script.js` — mobile navigation and latest GitHub Release lookup
+- `config.js` — GitHub repository and asset matching settings
+- `assets/Nexora.png` — Nexora logo/favicon source
+- `assets/favicon.svg` — fallback vector favicon
 
-## Configure downloads
-`config.js` currently targets `Techman-cyber/Nexora`. The latest public GitHub Release should include a Windows `.exe` and an Android `.apk`. If there is no APK, the page can offer an attached Android ZIP as a fallback; ZIP files are not directly installable unless they contain an APK that the visitor extracts.
+## Publish with GitHub Pages
+1. Download and extract this ZIP.
+2. Upload the **contents** of the `Nexora-Download-Website` folder to the root of your website repository.
+3. Commit and push the files.
+4. In GitHub, open **Settings → Pages** and choose the correct branch and `/ (root)` if Pages is not already configured.
 
-If the website is hosted in a different repository, upload the **contents** of this folder to that website repository and keep `assets/` beside `index.html`. GitHub Pages can serve these static files directly. No API token is needed for public releases.
+## Release downloads
+The page checks the latest public release in `Techman-cyber/Nexora` and looks for an `.exe` file for Windows and an `.apk` file for Android. If no APK is present, the optional ZIP fallback may be shown and is explicitly labelled as a ZIP archive, not an installable package. Publish actual release assets to activate direct download buttons.
 
-## Notes
-- GitHub API rate limits can temporarily prevent the release status from loading. The release-page links remain available.
-- The page only advertises file types found in the public release; it does not claim the browser has unverified privacy or performance features.
+Update `config.js` if the release repository changes. This is a static website and does not deploy itself; publish the files to your website repository to make the changes live.
