@@ -16,3 +16,6 @@ The website checks the latest public release and automatically links the matchin
 5. Use the URL shown in Pages settings.
 
 When you publish a new release with updated EXE/APK assets, the website picks up the latest assets automatically. The included favicon is a temporary website mark; replace `assets/favicon.svg` with your own existing Nexora icon if desired. This does not change your browser app icon.
+
+## Current repository status
+The connected repository had no published Releases when this ZIP was prepared. Until a Release contains a Windows `.exe` and Android `.apk`, the buttons can open the Releases page but cannot download an installer that has not been published.
