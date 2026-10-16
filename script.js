@@ -1,88 +1,45 @@
 (() => {
   'use strict';
-  const config = window.NEXORA_CONFIG || {};
-  const owner = String(config.owner || '').trim();
-  const repo = String(config.repo || '').trim();
-  const configured = Boolean(owner && repo && !owner.startsWith('YOUR_') && !repo.startsWith('YOUR_'));
-  const root = configured ? `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}` : 'https://github.com';
-  const releasePage = `${root}/releases`;
+  const cfg = window.NEXORA_CONFIG || {};
+  const owner = String(cfg.owner || '').trim();
+  const repo = String(cfg.repo || '').trim();
+  const valid = owner && repo && !owner.startsWith('YOUR_') && !repo.startsWith('YOUR_');
+  const root = valid ? `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}` : 'https://github.com';
+  const releases = `${root}/releases`;
   const $ = id => document.getElementById(id);
   $('year').textContent = new Date().getFullYear();
-  ['sourceLink', 'releaseLink', 'allReleases'].forEach(id => { if ($(id)) $(id).href = id === 'sourceLink' ? root : releasePage; });
-
-  function bytes(value) {
-    if (!Number.isFinite(value) || value <= 0) return '';
-    const units = ['B', 'KB', 'MB', 'GB']; let n = value, i = 0;
-    while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
-    return `${n.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
-  }
-  function button(id, url, label) {
-    const a = $(id); a.href = url; a.innerHTML = `<span>${label}</span><b>↓</b>`;
-    a.target = '_blank'; a.rel = 'noopener noreferrer';
-  }
-  function note(platform, text, state) {
-    $(`${platform}Note`).textContent = text;
-    $(`${platform}Status`).classList.toggle('available', state === 'available');
-    $(`${platform}Status`).classList.toggle('missing', state === 'missing');
-  }
-  function toast(message) {
-    const node = $('toast'); node.textContent = message; node.classList.add('visible');
-    clearTimeout(window.__nexoraToastTimer);
-    window.__nexoraToastTimer = setTimeout(() => node.classList.remove('visible'), 3600);
-  }
-  if (!configured) {
-    $('releaseHint').textContent = 'Set your GitHub owner and repository in config.js to activate direct downloads.';
-    ['desktopDownload', 'androidDownload'].forEach(id => $(id).addEventListener('click', e => { if ($(id).getAttribute('href') === '#') { e.preventDefault(); toast('Configure the GitHub repository in config.js first.'); } }));
-    return;
-  }
-  button('desktopDownload', releasePage, 'View Windows release');
-  button('androidDownload', releasePage, 'View Android release');
-  const api = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/releases/latest`;
-  fetch(api, { headers: { Accept: 'application/vnd.github+json' } })
-    .then(response => {
-      if (!response.ok) throw new Error(response.status === 404 ? 'No public release was found yet.' : `GitHub returned ${response.status}.`);
-      return response.json();
-    })
+  ['heroSource','footerSource'].forEach(id => { if ($(id)) $(id).href = root; });
+  ['allReleases'].forEach(id => { if ($(id)) $(id).href = releases; });
+  const menu = $('menuToggle'), nav = document.querySelector('.main-nav');
+  menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); }));
+  function formatBytes(n) { if (!Number.isFinite(n) || n <= 0) return ''; const u=['B','KB','MB','GB']; let i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;} return `${n.toFixed(i?1:0)} ${u[i]}`; }
+  function setButton(id, url, label) { const a=$(id); a.href=url; a.removeAttribute('aria-disabled'); a.innerHTML=`<span>${label}</span><b aria-hidden="true">↓</b>`; a.target='_blank'; a.rel='noopener noreferrer'; }
+  function status(platform, text, kind) { $(`${platform}Note`).textContent=text; const dot=$(`${platform}Status`); dot.classList.toggle('available',kind==='available'); dot.classList.toggle('missing',kind==='missing'); }
+  function missing(platform, platformName) { $(`${platform}Version`).textContent='Build not found'; status(platform,`No ${platformName} file found in the latest release.`, 'missing'); }
+  if (!valid) { $('releaseHint').textContent='Set the GitHub owner and repository in config.js to enable direct downloads.'; return; }
+  setButton('desktopDownload', releases, 'View Windows releases');
+  setButton('androidDownload', releases, 'View Android releases');
+  fetch(`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/releases/latest`, {headers:{Accept:'application/vnd.github+json'}})
+    .then(r => { if(!r.ok) throw new Error(r.status===404?'No public release was found yet.':`GitHub returned ${r.status}.`); return r.json(); })
     .then(release => {
-      const assets = Array.isArray(release.assets) ? release.assets : [];
-      const winPattern = config.desktopAssetPattern instanceof RegExp ? config.desktopAssetPattern : /\.exe$/i;
-      const apkPattern = config.androidAssetPattern instanceof RegExp ? config.androidAssetPattern : /\.apk$/i;
-      const win = assets.find(asset => winPattern.test(asset.name));
-      const apk = assets.find(asset => apkPattern.test(asset.name));
-      const androidZip = !apk && config.androidZipFallback ? assets.find(asset => /android.*\.zip$/i.test(asset.name) || /\.zip$/i.test(asset.name)) : null;
-      const tag = release.tag_name || 'Latest release';
-      $('releaseLink').href = release.html_url || releasePage;
-      $('allReleases').href = releasePage;
-      if (win) {
-        button('desktopDownload', win.browser_download_url, 'Download for Windows');
-        $('desktopVersion').textContent = tag;
-        $('desktopSize').textContent = bytes(win.size);
-        note('desktop', `${win.name} · ready to download`, 'available');
-      } else {
-        $('desktopVersion').textContent = 'Not attached yet';
-        note('desktop', 'No .exe found in the latest release. Check release assets.', 'missing');
-      }
-      if (apk) {
-        button('androidDownload', apk.browser_download_url, 'Download Android APK');
-        $('androidVersion').textContent = tag;
-        $('androidFileType').textContent = 'APK';
-        $('androidSize').textContent = bytes(apk.size);
-        note('android', `${apk.name} · installable APK`, 'available');
-      } else if (androidZip) {
-        button('androidDownload', androidZip.browser_download_url, 'Download Android ZIP');
-        $('androidVersion').textContent = tag;
-        $('androidFileType').textContent = 'ZIP';
-        $('androidSize').textContent = bytes(androidZip.size);
-        note('android', `${androidZip.name} · ZIP fallback (not directly installable)`, 'available');
-      } else {
-        $('androidVersion').textContent = 'Not attached yet';
-        note('android', 'No .apk found. Attach app-debug.apk or a signed release APK.', 'missing');
-      }
-      $('releaseHint').textContent = `Latest release: ${tag}. Published ${release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'date unavailable'}.`;
+      const assets=Array.isArray(release.assets)?release.assets:[];
+      const winRx=cfg.desktopAssetPattern instanceof RegExp?cfg.desktopAssetPattern:/\.exe$/i;
+      const apkRx=cfg.androidAssetPattern instanceof RegExp?cfg.androidAssetPattern:/\.apk$/i;
+      const win=assets.find(a=>winRx.test(a.name));
+      const apk=assets.find(a=>apkRx.test(a.name));
+      const zip=!apk&&cfg.androidZipFallback?assets.find(a=>/android.*\.zip$/i.test(a.name)||/\.zip$/i.test(a.name)):null;
+      const tag=release.tag_name||'Latest release';
+      if(win){setButton('desktopDownload',win.browser_download_url,'Download for Windows');$('desktopVersion').textContent=tag;$('desktopSize').textContent=formatBytes(win.size);$('desktopFileType').textContent='EXE';status('desktop',`${win.name} · ready to download`,'available');} else {missing('desktop','.exe');}
+      if(apk){setButton('androidDownload',apk.browser_download_url,'Download Android APK');$('androidVersion').textContent=tag;$('androidFileType').textContent='APK';$('androidSize').textContent=formatBytes(apk.size);status('android',`${apk.name} · installable Android package`,'available');}
+      else if(zip){setButton('androidDownload',zip.browser_download_url,'Download Android ZIP');$('androidVersion').textContent=tag;$('androidFileType').textContent='ZIP';$('androidSize').textContent=formatBytes(zip.size);status('android',`${zip.name} · ZIP archive, not directly installable`,'available');}
+      else {missing('android','.apk');}
+      const date=release.published_at?new Date(release.published_at).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'date unavailable';
+      $('releaseHint').textContent=`Latest release: ${tag} · published ${date}. ${assets.length} file${assets.length===1?'':'s'} attached.`;
+      $('about-release').setAttribute('data-release',tag);
     })
-    .catch(error => {
-      $('releaseHint').textContent = `${error.message} The release page is still available below.`;
-      note('desktop', 'Open GitHub Releases to check available Windows builds.', 'missing');
-      note('android', 'Open GitHub Releases to check available Android builds.', 'missing');
+    .catch(err=>{
+      $('releaseHint').textContent=`Could not load release details (${err.message}). You can still open GitHub Releases to download available files.`;
+      status('desktop','Open GitHub Releases to check Windows builds.','missing');status('android','Open GitHub Releases to check Android builds.','missing');
     });
 })();

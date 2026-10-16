@@ -1,21 +1,19 @@
 # Nexora Browser — Download Website
 
-A responsive static download page with your Nexora logo and GitHub Releases integration.
+A responsive landing page for Nexora with a dark editorial UI, feature/value messaging, platform download cards, and live GitHub Release asset detection.
 
 ## Files
-- `index.html` — website structure
+- `index.html` — page structure and copy
 - `style.css` — responsive visual design
-- `script.js` — loads the latest public release and locates Windows/Android assets
-- `config.js` — GitHub repository and asset matching rules
-- `assets/Nexora.png` — Nexora logo used in the header, hero, preview, footer, and favicon
+- `script.js` — mobile navigation and release asset detection
+- `config.js` — GitHub repository and asset patterns
+- `assets/Nexora.png` — Nexora logo used throughout the site and as the favicon
 
-## GitHub Release setup
-The config is already set to `Techman-cyber/Nexora`. Publish a **public** GitHub Release and attach a Windows `.exe` plus an Android `.apk` (for example `app-debug.apk` for testing). The page automatically uses the latest release and direct asset URLs. It prefers an APK; if none is present, it can link an Android ZIP as a fallback, clearly labelled as a ZIP rather than an installable app.
+## Configure downloads
+`config.js` currently targets `Techman-cyber/Nexora`. The latest public GitHub Release should include a Windows `.exe` and an Android `.apk`. If there is no APK, the page can offer an attached Android ZIP as a fallback; ZIP files are not directly installable unless they contain an APK that the visitor extracts.
 
-## Publish with GitHub Pages
-1. Extract this ZIP.
-2. Upload the contents of the `Nexora-Download-Website` folder to the root of the separate website repository. Make sure `index.html`, `style.css`, `script.js`, `config.js`, and `assets/` are at the same level.
-3. Commit and push.
-4. In that website repository, open **Settings → Pages**, choose the branch and root folder, and save.
+If the website is hosted in a different repository, upload the **contents** of this folder to that website repository and keep `assets/` beside `index.html`. GitHub Pages can serve these static files directly. No API token is needed for public releases.
 
-No API token is needed for public GitHub releases. GitHub's public API can be rate-limited occasionally; the releases page remains available as a fallback.
+## Notes
+- GitHub API rate limits can temporarily prevent the release status from loading. The release-page links remain available.
+- The page only advertises file types found in the public release; it does not claim the browser has unverified privacy or performance features.
