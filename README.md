@@ -1,18 +1,21 @@
-# Nexora Browser download website
+# Nexora Browser — Download Website
 
-## Important: connect the download buttons
-1. Open `config.js`.
-2. Replace `YOUR_GITHUB_USERNAME` and `YOUR_NEXORA_REPOSITORY` with the owner and repository name for your browser project.
-3. Make the repository public for public downloads.
-4. Publish the Windows `.exe` and Android `.apk` as assets in a GitHub **Release**.
+A responsive static download page with your Nexora logo and GitHub Releases integration.
 
-The website checks the latest public release and automatically links the matching EXE/APK files. GitHub Actions workflow artifacts are temporary and can require sign-in, so a public release asset is the reliable option for a website download button. If you click a button before configuring the repo, it explains what is missing.
+## Files
+- `index.html` — website structure
+- `style.css` — responsive visual design
+- `script.js` — loads the latest public release and locates Windows/Android assets
+- `config.js` — GitHub repository and asset matching rules
+- `assets/Nexora.png` — Nexora logo used in the header, hero, preview, footer, and favicon
 
-## Publish free using GitHub Pages
-1. Create a GitHub repository for this website (e.g. `nexora-downloads`).
-2. Upload the contents of this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Select **Deploy from a branch**, branch `main`, folder `/ (root)`, then save.
-5. Use the URL shown in Pages settings.
+## GitHub Release setup
+The config is already set to `Techman-cyber/Nexora`. Publish a **public** GitHub Release and attach a Windows `.exe` plus an Android `.apk` (for example `app-debug.apk` for testing). The page automatically uses the latest release and direct asset URLs. It prefers an APK; if none is present, it can link an Android ZIP as a fallback, clearly labelled as a ZIP rather than an installable app.
 
-When you publish a new release with updated EXE/APK assets, the website picks up the latest assets automatically. The included favicon is a temporary website mark; replace `assets/favicon.svg` with your own existing Nexora icon if desired. This does not change your browser app icon.
+## Publish with GitHub Pages
+1. Extract this ZIP.
+2. Upload the contents of the `Nexora-Download-Website` folder to the root of the separate website repository. Make sure `index.html`, `style.css`, `script.js`, `config.js`, and `assets/` are at the same level.
+3. Commit and push.
+4. In that website repository, open **Settings → Pages**, choose the branch and root folder, and save.
+
+No API token is needed for public GitHub releases. GitHub's public API can be rate-limited occasionally; the releases page remains available as a fallback.

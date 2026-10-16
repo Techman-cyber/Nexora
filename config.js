@@ -1,7 +1,10 @@
-/* Set these to your public GitHub repository details. */
+/* Nexora website download configuration. Public release assets are fetched from this repo. */
 window.NEXORA_CONFIG = {
-  owner: "YOUR_GITHUB_USERNAME",
-  repo: "YOUR_NEXORA_REPOSITORY",
+  owner: "Techman-cyber",
+  repo: "Nexora",
+  // Windows installer/application asset in the latest public release.
   desktopAssetPattern: /\.exe$/i,
-  androidAssetPattern: /\.apk$/i
+  // Prefer an installable APK. If no APK is attached, the website can offer an Android ZIP as fallback.
+  androidAssetPattern: /\.apk$/i,
+  androidZipFallback: true
 };
