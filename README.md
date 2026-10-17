@@ -7,9 +7,7 @@ A responsive product landing page for Nexora Browser, inspired by the editorial 
 - `style.css` — responsive visual design, animation, and browser/device mockups
 - `script.js` — mobile navigation and latest GitHub Release lookup
 - `config.js` — GitHub repository and asset matching settings
-- `assets/Nexora-mark.png` — circular-cropped version of your uploaded Nexora artwork used throughout the page and as the favicon
-- `assets/Nexora-source-upload.png` — your original uploaded image, preserved unchanged for social previews or future edits
-- `assets/Nexora.png` — copy of the circular logo for compatibility
+- `assets/Nexora.png` — Nexora logo/favicon source
 - `assets/favicon.svg` — fallback vector favicon
 
 ## Publish with GitHub Pages
@@ -24,4 +22,4 @@ The page checks the latest public release in `Techman-cyber/Nexora` and looks fo
 Update `config.js` if the release repository changes. This is a static website and does not deploy itself; publish the files to your website repository to make the changes live.
 
 
-Brand assets: `assets/Nexora-source-upload.png` is the exact image you uploaded. `assets/Nexora-mark.png` is a circular-cropped rendering of that same artwork, so it is used consistently throughout the site without the surrounding rectangular canvas.
+Brand assets: `assets/Nexora.png` is the supplied original logo file; `assets/Nexora-mark.png` is a transparent-background version used inside the desktop and Android product previews so the actual logo appears instead of a letter placeholder.
