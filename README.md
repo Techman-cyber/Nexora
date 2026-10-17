@@ -25,7 +25,12 @@ Update `config.js` if the release repository changes. This is a static website a
 Brand assets: `assets/Nexora.png` is the cleaned transparent 1024px mark/social-preview image; `assets/Nexora-mark.png` is the clean transparent 512px mark used around the site; `assets/Nexora-source-upload.png` preserves your original upload unchanged. `assets/favicon.png` and root `favicon.ico` contain the refreshed favicon.
 
 
+## Search and AI workspaces
+- **Web Suite:** Google, DuckDuckGo, Bing, Brave Search, and Ecosia.
+- **AI Hub:** ChatGPT, Google Gemini, Claude, Microsoft Copilot, and Perplexity.
+- **Nexora AI:** a separate personal-assistant concept for browser actions and local profile context. A generative model/API is not configured in this source build.
+
 ## Branding update
 - The logo assets now use the supplied Nexora artwork with the charcoal background removed and transparent edges. The original upload is preserved as `assets/Nexora-source-upload.png`.
 - The favicon is explicitly versioned as `assets/favicon.png?v=6` in `index.html`; if a browser still shows the old icon after deployment, hard refresh the page or clear that site’s cached favicon.
-- A single browser showcase lists Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, and Vivaldi together. These are official-site links, not claims that Nexora switches its Chromium engine.
+- A Web Suite section lists Google, DuckDuckGo, Bing, Brave Search, and Ecosia. It is separate from AI Hub and Nexora AI.
