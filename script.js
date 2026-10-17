@@ -13,8 +13,20 @@
   const menu = $('menuToggle'), nav = document.querySelector('.main-nav');
   menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
   nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); }));
-  // Prefer real service/product logos; show a neat brand initial only if the icon host is unavailable.
-  document.querySelectorAll('img[data-fallback]').forEach(img => img.addEventListener('error', () => {
+  // Keep real logos visible: try the service favicon and alternate icon hosts instead of inventing letter marks.
+  document.querySelectorAll('img[data-icon-fallbacks]').forEach(img => {
+    const queue = String(img.dataset.iconFallbacks || '').split('|').filter(Boolean);
+    let next = 0;
+    const retry = () => {
+      if (next < queue.length) { img.src = queue[next++]; return; }
+      img.classList.add('brand-icon-unavailable');
+      img.alt = img.alt || 'Brand logo unavailable';
+    };
+    img.addEventListener('error', retry);
+    if (img.complete && img.naturalWidth === 0) retry();
+  });
+  // Remaining decorative shortcuts may use concise initials as a last-resort label; brand logo cards above do not.
+  document.querySelectorAll('img[data-fallback]:not([data-icon-fallbacks])').forEach(img => img.addEventListener('error', () => {
     if (img.dataset.fallbackShown) return;
     img.dataset.fallbackShown = '1'; img.hidden = true;
     const fallback = document.createElement('span'); fallback.className = 'brand-icon-fallback'; fallback.textContent = img.dataset.fallback || '?';

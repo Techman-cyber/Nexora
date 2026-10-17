@@ -147,3 +147,8 @@ html{scroll-behavior:smooth;scroll-padding-top:92px}body{background:#f7f5fb;colo
 .browser-suite-note{max-width:900px;margin:20px auto 0;color:#7f8ca2;font-size:11px;line-height:1.6;text-align:center}
 @media(max-width:980px){.suite-engine-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.nexora-ai-workspaces{grid-template-columns:1fr}}
 @media(max-width:620px){.nexora-suite-group{padding:14px}.suite-engine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nexora-ai-card{padding:18px}.ai-provider-mini-grid{gap:5px}.ai-provider-mini-grid a{padding:10px 2px}.ai-provider-mini-grid span{font-size:9px}.nexora-ai-card>p{min-height:0}}
+
+/* Brand mark fix: show the real Nexora orbital logo in the personal AI workspace. */
+.personal-orb{background:transparent!important;box-shadow:none!important;border-radius:50%!important;overflow:hidden;padding:0!important;}
+.personal-orb img{display:block;width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.brand-icon-unavailable{visibility:hidden;}
