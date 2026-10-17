@@ -13,7 +13,14 @@
   const menu = $('menuToggle'), nav = document.querySelector('.main-nav');
   menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
   nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); }));
-  // Prefer real service/product logos; show a neat brand initial only if the icon host is unavailable.
+  // For the four brands that have intermittently failed on the third-party icon CDN,
+  // use the service's website favicon first and a bundled SVG if that request fails.
+  document.querySelectorAll('img[data-local-fallback]').forEach(img => img.addEventListener('error', () => {
+    if (img.dataset.localFallbackShown) return;
+    img.dataset.localFallbackShown = '1';
+    img.src = img.dataset.localFallback;
+  }));
+  // Remaining logos can use a small text fallback only if their remote icon fails.
   document.querySelectorAll('img[data-fallback]').forEach(img => img.addEventListener('error', () => {
     if (img.dataset.fallbackShown) return;
     img.dataset.fallbackShown = '1'; img.hidden = true;
