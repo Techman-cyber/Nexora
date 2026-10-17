@@ -35,3 +35,43 @@ html{scroll-behavior:smooth;scroll-padding-top:92px}body{background:#f7f5fb;colo
 .last-word-logo{display:grid;place-items:center;background:linear-gradient(145deg,#fff,#f5f1ff);border-color:#ded5f4}
 .last-word-logo img{object-fit:contain;padding:5px}
 .footer-brand .brand-mark img{padding:3px}
+
+
+/* Nexora logo cleanup: show only the circular mark; transparent artwork, no dark square behind it. */
+.brand-mark{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:50%!important;overflow:visible!important}
+.brand-mark img{display:block;width:100%;height:100%;padding:0!important;object-fit:contain!important;background:transparent!important;border-radius:0!important}
+.footer-brand .brand-mark img{padding:0!important}
+.home-logo img,.tab img{object-fit:contain!important;background:transparent!important;border-radius:0!important}
+
+/* Real app logos in the product previews. */
+.mock-shortcuts b{display:grid;place-items:center;overflow:hidden}
+.mock-shortcuts .shortcut-real-icon{width:18px;height:18px;object-fit:contain;background:transparent;padding:0;border-radius:0}
+.mock-shortcuts .shortcut-wiki{filter:none}
+.mini-icons i,.phone-shortcuts i{overflow:hidden}
+.mini-icons i img,.phone-shortcuts i img{display:block;width:21px;height:21px;object-fit:contain;background:transparent;border-radius:0}
+.mini-icons .mini-add,.phone-shortcuts .phone-add{font-style:normal}
+.mini-icons i:nth-child(1),.mini-icons i:nth-child(2),.mini-icons i:nth-child(3),.phone-shortcuts i:nth-child(1),.phone-shortcuts i:nth-child(2),.phone-shortcuts i:nth-child(3){background:#fff}
+
+/* Five browser choices in one premium section, all visible together. */
+.browser-suite-section{padding-top:96px;padding-bottom:86px;border-top:1px solid rgba(255,255,255,.06)}
+.browser-suite-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:44px;margin-bottom:28px}
+.browser-suite-heading .eyebrow{margin-bottom:12px}
+.browser-suite-heading h2{font-family:var(--display);font-size:clamp(42px,5vw,62px);line-height:1.02;letter-spacing:-.065em;margin:0}
+.browser-suite-heading h2 span{color:var(--green)}
+.browser-suite-heading>p{max-width:415px;margin:0 0 5px;color:#98a3b7;font-size:13px;line-height:1.85}
+.browser-brand-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.browser-brand-card{min-width:0;min-height:126px;display:flex;flex-direction:column;align-items:flex-start;gap:17px;padding:17px 16px 14px;border:1px solid rgba(220,230,255,.10);border-radius:16px;background:linear-gradient(145deg,rgba(21,28,43,.94),rgba(11,15,25,.93));transition:transform .18s,border-color .18s,background .18s}
+.browser-brand-card:hover{transform:translateY(-4px);border-color:rgba(169,154,255,.45);background:linear-gradient(145deg,rgba(34,39,62,.98),rgba(13,18,30,.98))}
+.browser-brand-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#fff;border:1px solid rgba(255,255,255,.75);box-shadow:0 8px 23px rgba(0,0,0,.16)}
+.browser-brand-icon img{display:block;width:27px;height:27px;object-fit:contain}
+.browser-brand-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.browser-brand-copy b{font-size:12px;font-weight:750;line-height:1.25}
+.browser-brand-copy small{font-size:10px;color:#8e9ab0}
+.browser-brand-arrow{position:absolute;top:14px;right:15px;color:#96a6ff;font-size:16px;opacity:.75}
+.browser-brand-card{position:relative}
+.browser-suite-note{margin:18px 0 0;color:#6f7c92;font-size:10px;line-height:1.7}
+@media(max-width:980px){.browser-brand-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.browser-suite-heading{align-items:flex-start;flex-direction:column;gap:17px}}
+@media(max-width:620px){.browser-suite-section{padding-top:70px;padding-bottom:60px}.browser-suite-heading h2{font-size:43px}.browser-brand-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.browser-brand-card{min-height:116px;padding:14px}.browser-brand-copy b{font-size:11px}}
+
+.brand-icon-fallback{display:grid;place-items:center;width:100%;height:100%;font-family:var(--display);font-size:14px;line-height:1;font-weight:800;color:inherit}
+.browser-brand-icon .brand-icon-fallback{font-size:17px}

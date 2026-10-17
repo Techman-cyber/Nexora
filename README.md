@@ -7,8 +7,8 @@ A responsive product landing page for Nexora Browser, inspired by the editorial 
 - `style.css` — responsive visual design, animation, and browser/device mockups
 - `script.js` — mobile navigation and latest GitHub Release lookup
 - `config.js` — GitHub repository and asset matching settings
-- `assets/Nexora.png` — Nexora logo/favicon source
-- `assets/favicon.svg` — fallback vector favicon
+- `assets/Nexora.png` — transparent Nexora logo and social-preview image
+- `assets/favicon.png` and root `favicon.ico` — refreshed transparent favicon assets; `assets/favicon.svg` is the fallback
 
 ## Publish with GitHub Pages
 1. Download and extract this ZIP.
@@ -22,4 +22,10 @@ The page checks the latest public release in `Techman-cyber/Nexora` and looks fo
 Update `config.js` if the release repository changes. This is a static website and does not deploy itself; publish the files to your website repository to make the changes live.
 
 
-Brand assets: `assets/Nexora.png` is the supplied original logo file; `assets/Nexora-mark.png` is a transparent-background version used inside the desktop and Android product previews so the actual logo appears instead of a letter placeholder.
+Brand assets: `assets/Nexora.png` is the cleaned transparent 1024px mark/social-preview image; `assets/Nexora-mark.png` is the clean transparent 512px mark used around the site; `assets/Nexora-source-upload.png` preserves your original upload unchanged. `assets/favicon.png` and root `favicon.ico` contain the refreshed favicon.
+
+
+## Branding update
+- The logo assets now use the supplied Nexora artwork with the charcoal background removed and transparent edges. The original upload is preserved as `assets/Nexora-source-upload.png`.
+- The favicon is explicitly versioned as `assets/favicon.png?v=6` in `index.html`; if a browser still shows the old icon after deployment, hard refresh the page or clear that site’s cached favicon.
+- A single browser showcase lists Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, and Vivaldi together. These are official-site links, not claims that Nexora switches its Chromium engine.

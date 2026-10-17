@@ -13,6 +13,13 @@
   const menu = $('menuToggle'), nav = document.querySelector('.main-nav');
   menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
   nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); }));
+  // Prefer real service/product logos; show a neat brand initial only if the icon host is unavailable.
+  document.querySelectorAll('img[data-fallback]').forEach(img => img.addEventListener('error', () => {
+    if (img.dataset.fallbackShown) return;
+    img.dataset.fallbackShown = '1'; img.hidden = true;
+    const fallback = document.createElement('span'); fallback.className = 'brand-icon-fallback'; fallback.textContent = img.dataset.fallback || '?';
+    img.parentElement?.append(fallback);
+  }, { once: true }));
   function formatBytes(n) { if (!Number.isFinite(n) || n <= 0) return ''; const u=['B','KB','MB','GB']; let i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;} return `${n.toFixed(i?1:0)} ${u[i]}`; }
   function setButton(id, url, label) { const a=$(id); a.href=url; a.removeAttribute('aria-disabled'); a.innerHTML=`<span>${label}</span><b aria-hidden="true">↓</b>`; a.target='_blank'; a.rel='noopener noreferrer'; }
   function status(platform, text, kind) { $(`${platform}Note`).textContent=text; const dot=$(`${platform}Status`); dot.classList.toggle('available',kind==='available'); dot.classList.toggle('missing',kind==='missing'); }
