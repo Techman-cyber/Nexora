@@ -1,125 +1,80 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Meet Nexora Browser. Explore the browser, choose your platform, and download the latest Windows or Android build from the official release.">
-  <meta property="og:title" content="Nexora Browser — Your web, your way">
-  <meta property="og:description" content="One home for Nexora on Windows and Android.">
-  <meta property="og:image" content="assets/Nexora.png?v=6">
-  <title>Nexora Browser — Your web, your way</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png?v=6"><link rel="shortcut icon" href="favicon.ico?v=6"><link rel="apple-touch-icon" sizes="512x512" href="assets/favicon.png?v=6">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
-</head>
-<body>
-  <div class="page-glow glow-a"></div><div class="page-glow glow-b"></div>
-  <header class="site-header shell">
-    <a class="brand" href="#home" aria-label="Nexora home"><span class="brand-mark"><img src="assets/Nexora-mark.png" alt="Nexora logo"></span><span class="brand-name">nexora<span>.</span><small>BROWSER</small></span></a>
-    <nav class="main-nav" aria-label="Main navigation"><a href="#features">Experience</a><a href="#why-nexora">Why Nexora</a><a href="#browser-suite">Web Suite + AI</a><a href="#downloads">Downloads</a><a href="#about-release">Release notes</a></nav>
-    <a class="header-cta" href="#downloads">Get Nexora <span>↗</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
-  </header>
-  <main id="home">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-line"></span> A BROWSER FOR YOUR EVERYDAY WEB</div>
-        <h1>Your web.<br><span>Your way.</span></h1>
-        <p class="hero-text">Meet Nexora Browser — a fresh place to start your next search, open your favourite sites, and get on with what you came to do.</p>
-        <div class="hero-buttons"><a class="button button-primary" href="#downloads">Choose your device <span>↓</span></a><a class="button button-quiet" href="https://github.com/Techman-cyber/Nexora" id="heroSource" target="_blank" rel="noopener noreferrer"><span class="github-mark">⌘</span> Explore the project <span>↗</span></a><button class="command-trigger" id="openCommand" type="button" aria-label="Open quick navigation">Quick jump <kbd>Ctrl K</kbd></button></div>
-        <div class="hero-proof"><div class="proof-item"><span class="proof-icon">01</span><span><b>Two platforms</b><small>Windows + Android</small></span></div><div class="proof-divider"></div><div class="proof-item"><span class="proof-icon proof-icon-green">↗</span><span><b>Public releases</b><small>Builds hosted on GitHub</small></span></div></div>
-      </div>
-      <div class="hero-visual" aria-label="Stylized Nexora browser preview">
-        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
-        <div class="visual-tag tag-top"><span class="tag-pulse"></span> YOUR NEXT TAB STARTS HERE</div>
-        <div class="app-window">
-          <div class="app-top"><div class="traffic"><i></i><i></i><i></i></div><div class="tab"><img src="assets/Nexora-mark.png" alt="Nexora logo"><span>New tab</span><b>×</b></div><span class="plus-tab">+</span><span class="top-more">···</span></div>
-          <div class="address-row"><span class="lock">⌕</span><span>Search or enter address</span><span class="address-star">☆</span><span class="address-menu">⋯</span></div>
-          <div class="app-home"><div class="home-logo"><img src="assets/Nexora-mark.png" alt="Nexora logo"><span>nexora<span class="brand-dot">.</span></span></div><div class="home-greeting">WHERE TO NEXT?</div><div class="mock-search"><span>⌕</span><span>Search the web or enter a URL</span><kbd>↵</kbd></div><div class="mock-shortcuts"><div><b class="shortcut-g"><img class="shortcut-real-icon" src="https://cdn.simpleicons.org/google/4285F4" alt="" data-fallback="G"></b><small>Google</small></div><div><b class="shortcut-play"><img class="shortcut-real-icon" src="https://cdn.simpleicons.org/youtube/FF0033" alt="" data-fallback="▶"></b><small>YouTube</small></div><div><b class="shortcut-w"><img class="shortcut-real-icon shortcut-wiki" src="https://cdn.simpleicons.org/wikipedia/111827" alt="" data-fallback="W"></b><small>Wikipedia</small></div><div><b class="shortcut-add">+</b><small>Add shortcut</small></div></div><div class="home-bottom"><span class="home-bottom-dot"></span> A LITTLE SPACE TO THINK. A LOT TO DISCOVER.</div></div>
-        </div>
-        <div class="floating-note note-left"><span class="note-symbol">✦</span><span><b>Make it yours</b><small>Your next browsing session</small></span></div>
-        <div class="floating-note note-right"><span class="note-symbol note-symbol-green">↓</span><span><b>Ready to explore</b><small>Pick your platform below</small></span></div>
-        <div class="visual-caption"><span>01 / THE NEXORA EXPERIENCE</span><span class="caption-rule"></span></div>
-      </div>
-      <div class="hero-bottom-line"><span>MADE TO MEET YOU WHERE YOU BROWSE</span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
-    </section>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nexora: the calm, fast browser built around you</title><meta name="description" content="Nexora is a desktop browser with a built-in Power Centre, quiet ad blocking, colour grading and sounds. Free for Windows."><meta name="theme-color" content="#07090d">
+<link rel="icon" type="image/png" href="assets/favicon-32.png"><link rel="apple-touch-icon" href="assets/nexora-icon.png">
+<meta property="og:type" content="website"><meta property="og:title" content="Nexora: the calm, fast browser built around you"><meta property="og:description" content="Nexora is a desktop browser with a built-in Power Centre, quiet ad blocking, colour grading and sounds. Free for Windows."><meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="site.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="wrap"><a class="brand" href="index.html"><img src="assets/nexora-icon.png" alt="" width="30" height="30">Nexora</a>
+<button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<div class="links"><a href="index.html#features">Features</a><a href="index.html#power">Power Centre</a><a href="index.html#colour">Colour</a><a href="index.html#faq">FAQ</a><a class="btn primary sm" href="index.html#download">Download</a></div></div></nav>
+<main id="main">
+<header class="hero"><div class="wrap">
+ <span class="pill"><i></i>Version <span data-version>0.9.7</span> for Windows</span>
+ <h1>The calm, fast browser built around <em>you.</em></h1>
+ <p class="lead">Nexora is a desktop browser on the Chromium engine, with a Power Centre, quiet ad blocking, colour grading and sounds built in. Nothing to install on top.</p>
+ <div class="cta"><a class="btn primary" data-dl href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5 11 4v7H3zM13 3.7 21 2.5V11h-8zM3 13h8v7l-8-1.5zM13 13h8v8.5l-8-1.2z"/></svg><span data-os-label>Download for Windows</span></a><a class="btn ghost" href="#features">See what's inside</a></div>
+ <p class="note">Free. Windows 10 and 11. Other platforms are not available yet.</p>
+ <div class="frame"><img src="assets/shot-home.webp" width="1440" height="900" alt="Nexora with the new tab page, search box and shortcuts"></div>
+</div></header>
 
-    <section class="why-section" id="why-nexora"><div class="shell why-inner">
-      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> WHY NEXORA</div><h2>Not another download page.<br><span>Your starting point.</span></h2></div><p>Everything you need to get started with Nexora, without hunting through folders or guessing which build to choose.</p></div>
-      <div class="value-grid">
-        <article class="value-card value-card-featured"><div class="value-top"><span class="value-icon icon-lilac">◈</span><span class="value-index">01</span></div><h3>One home for your browser</h3><p>Find the Windows and Android downloads in one clear place, with the latest available build linked from the official release.</p><div class="value-bottom"><span>WINDOWS</span><i></i><span>ANDROID</span></div></article>
-        <article class="value-card"><div class="value-top"><span class="value-icon icon-green">↗</span><span class="value-index">02</span></div><h3>Know what you're getting</h3><p>See the release tag and file details when available, then open the release page for notes and previous builds.</p><div class="value-link">CLEAR RELEASE INFO <span>↗</span></div></article>
-        <article class="value-card"><div class="value-top"><span class="value-icon icon-blue">⌘</span><span class="value-index">03</span></div><h3>Your device, your choice</h3><p>Use the platform that fits your day. Choose a Windows build for your PC or an Android package for your phone.</p><div class="value-link">TWO WAYS TO START <span>↗</span></div></article>
-      </div>
-      <div class="manifesto"><div class="manifesto-mark"><img src="assets/Nexora-mark.png" alt="Nexora logo"></div><p>Good software should make the next step feel simple.<br><span>Nexora starts with that idea.</span></p><span class="manifesto-side">A SMALLER DISTANCE<br>BETWEEN YOU AND THE WEB</span></div>
-    </div></section>
+<section id="features"><div class="wrap">
+ <div class="center"><div class="eyebrow">Everything built in</div><h2>Fewer extensions. More browser.</h2><p class="sub">The things people usually bolt on are already part of Nexora, and they work the same everywhere.</p></div>
+ <div class="grid">
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div><h3>Power Centre</h3><p>Focus Session, Page Zapper, Reader mode, Translate, Read Aloud, Media grabber, Snooze and Auto-reload in one panel.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 19 6v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Quiet ad blocking</h3><p>Blocks ad and tracker requests, hides the empty boxes they leave behind and skips YouTube video ads. No pop-ups, no counters.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></div><h3>Colour grading</h3><p>Presets like Cinematic, Warm evening and Monochrome, plus sliders for brightness, contrast, saturation, warmth and tint.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg></div><h3>Sounds that feel good</h3><p>Soft typing sounds in four styles and gentle chimes for new tabs, closing tabs and new windows. Every one has an off switch.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>Developer mode</h3><p>One switch turns the browser into a green terminal-style workspace with a live status strip and a matrix boot sequence.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4a2 2 0 1 1 4 0v2h4v4h-2a2 2 0 1 0 0 4h2v4h-4v-2a2 2 0 1 0-4 0v2H6v-4h2a2 2 0 1 0 0-4H6V6h4z"/></svg></div><h3>Chrome extensions</h3><p>Open the Chrome Web Store and click Add to Nexora. Many extensions work, and each one has its own on and off slider.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></div><h3>Force dark pages</h3><p>Turn every website dark with a single switch, while images and video keep their real colours.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Private by default</h3><p>Ghost windows keep no history. Your browsing data stays on your device. You can use Nexora as a guest without an account.</p></div>
+  <div class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5 11 4v7H3zM13 3.7 21 2.5V11h-8zM3 13h8v7l-8-1.5zM13 13h8v8.5l-8-1.2z"/></svg></div><h3>Clean, familiar layout</h3><p>A Chrome-style toolbar, address bar suggestions from tabs, bookmarks, history and search, and keyboard shortcuts you already know.</p></div>
+ </div>
+</div></section>
 
-    <section class="showcase-section shell" id="features">
-      <div class="showcase-intro"><div class="eyebrow"><span class="eyebrow-line"></span> MADE FOR THE WAY YOU BROWSE</div><h2>A little more <span>you.</span><br>A lot more web.</h2><p>Nexora is built around the everyday things a browser should make easy: opening a new tab, finding your next destination, and getting back to what matters.</p></div>
-      <article class="showcase-panel showcase-panel-desktop"><div class="showcase-copy"><span class="showcase-number">01 / DESKTOP</span><h3>Your next tab<br>is a fresh start.</h3><p>A clean start page puts search and your favourite destinations front and centre, so the web feels open from the moment you launch.</p><a href="#downloads" class="text-link">Explore the Windows build <span>↗</span></a></div><div class="showcase-art desktop-art"><div class="art-glow"></div><div class="mini-browser"><div class="mini-browser-bar"><i></i><i></i><i></i><span>New tab</span><b>＋</b></div><div class="mini-address">⌕ &nbsp; Search or enter address</div><div class="mini-content"><div class="mini-brand"><img class="mini-brand-icon" src="assets/Nexora-mark.png" alt="Nexora logo"> nexora<span>.</span></div><div class="mini-question">WHAT'S ON YOUR MIND?</div><div class="mini-search">⌕ &nbsp; Search the web <b>↵</b></div><div class="mini-icons"><i><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google"></i><i><img src="https://cdn.simpleicons.org/youtube/FF0033" alt="YouTube"></i><i><img src="https://cdn.simpleicons.org/wikipedia/111827" alt="Wikipedia"></i><i class="mini-add">＋</i></div></div></div><span class="art-orbit orbit-a"></span><span class="art-orbit orbit-b"></span></div></article>
-      <article class="showcase-panel showcase-panel-mobile"><div class="showcase-copy"><span class="showcase-number">02 / ANDROID</span><h3>Your web,<br>within reach.</h3><p>Take the Nexora experience with you. Check the Android release below to find the latest available build for your phone.</p><a href="#downloads" class="text-link">Find Nexora for Android <span>↗</span></a></div><div class="showcase-art mobile-art"><div class="phone-halo"></div><div class="phone-frame"><div class="phone-notch"></div><div class="phone-screen"><div class="phone-status"><span>9:41</span><span>● ▰ ▴</span></div><div class="phone-logo"><img src="assets/Nexora-mark.png" alt="Nexora logo"><b>nexora<span>.</span></b></div><div class="phone-caption">WHERE TO NEXT?</div><div class="phone-search">⌕ <span>Search or enter URL</span></div><div class="phone-shortcuts"><i><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google"></i><i><img src="https://cdn.simpleicons.org/youtube/FF0033" alt="YouTube"></i><i><img src="https://cdn.simpleicons.org/wikipedia/111827" alt="Wikipedia"></i><i class="phone-add">＋</i></div><div class="phone-lines"><i></i><i></i><i></i></div><div class="phone-bottom"><span>⌂</span><span>☆</span><span>▢</span><span>⋯</span></div></div></div><span class="mobile-float float-a">MADE FOR EVERYDAY</span><span class="mobile-float float-b">NEXORA / MOBILE</span></div></article>
-      <div class="principles-strip"><div><span>01</span><b>Start simple</b><small>Keep the next step clear.</small></div><div><span>02</span><b>Choose your platform</b><small>Desktop or Android.</small></div><div><span>03</span><b>Stay in control</b><small>Release files on GitHub.</small></div></div>
-    </section>
+<section id="power" class="band"><div class="wrap split">
+ <div class="copy"><div class="eyebrow">Power Centre</div><h2>Your toolbox, one click away</h2><p class="sub">Press Ctrl+Shift+L and everything useful is in one calm panel.</p>
+  <ul><li>Block distracting sites for 15 to 90 minutes with Focus Session.</li><li>Hide any annoying element on a site for good with the Page Zapper.</li><li>Read articles in a clean view, or have them read aloud.</li><li>Translate a page to Hindi, Telugu, Tamil and more in one click.</li><li>Save the videos, audio and files on a page with the Media grabber.</li></ul></div>
+ <div class="shot"><img loading="lazy" src="assets/shot-power.webp" width="1440" height="900" alt="The Nexora Power Centre panel with tool tiles"></div>
+</div></section>
 
+<section id="colour"><div class="wrap split rev">
+ <div class="copy"><div class="eyebrow">Colour grading</div><h2>Make the web look the way you like</h2><p class="sub">Warm it up for the evening, add contrast for photos, or go black and white. Changes apply instantly.</p>
+  <ul><li>Eight presets, from Natural to High contrast.</li><li>Five sliders for fine control.</li><li>Applies to web pages, so your content stays easy on the eyes.</li></ul></div>
+ <div class="shot"><img loading="lazy" src="assets/shot-grade.webp" width="1440" height="900" alt="Colour grading settings with the Cinematic preset applied"></div>
+</div></section>
 
-    <section class="browser-suite-section shell" id="browser-suite" aria-labelledby="browser-suite-title">
-      <div class="browser-suite-heading">
-        <div><div class="eyebrow"><span class="eyebrow-line"></span> WEB SUITE + AI HUB</div><h2 id="browser-suite-title">One place to search.<br><span>Five AIs to choose from.</span></h2></div>
-        <p>Nexora Web Suite brings five search engines together. AI Hub gives you one launchpad for ChatGPT, Gemini, Claude, Copilot and Perplexity.</p>
-      </div>
-      <div class="nexora-suite-group">
-        <div class="nexora-suite-group-head"><span class="suite-step">01</span><div><b>WEB SUITE</b><small>Five search engines · one launchpad</small></div></div>
-        <div class="browser-brand-grid suite-engine-grid">
-          <a class="browser-brand-card" href="https://www.google.com/" target="_blank" rel="noopener noreferrer"><span class="browser-brand-icon"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google logo" data-fallback="G" loading="lazy"></span><span class="browser-brand-copy"><b>Google</b><small>Search the web ↗</small></span><span class="browser-brand-arrow">↗</span></a>
-          <a class="browser-brand-card" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer"><span class="browser-brand-icon"><img src="https://cdn.simpleicons.org/duckduckgo/DE5833" alt="DuckDuckGo logo" data-fallback="D" loading="lazy"></span><span class="browser-brand-copy"><b>DuckDuckGo</b><small>Private search ↗</small></span><span class="browser-brand-arrow">↗</span></a>
-          <a class="browser-brand-card" href="https://www.bing.com/" target="_blank" rel="noopener noreferrer"><span class="browser-brand-icon"><img src="https://www.google.com/s2/favicons?domain=www.bing.com&sz=128" alt="Bing logo" data-local-fallback="assets/brand-bing.svg" loading="eager" onerror="this.onerror=null;this.src='assets/brand-bing.svg';"></span><span class="browser-brand-copy"><b>Bing</b><small>Microsoft search ↗</small></span><span class="browser-brand-arrow">↗</span></a>
-          <a class="browser-brand-card" href="https://search.brave.com/" target="_blank" rel="noopener noreferrer"><span class="browser-brand-icon"><img src="https://www.google.com/s2/favicons?domain=search.brave.com&sz=128" alt="Brave Search logo" data-local-fallback="assets/brand-brave-search.svg" loading="eager" onerror="this.onerror=null;this.src='assets/brand-brave-search.svg';"></span><span class="browser-brand-copy"><b>Brave Search</b><small>Independent search ↗</small></span><span class="browser-brand-arrow">↗</span></a>
-          <a class="browser-brand-card" href="https://www.ecosia.org/" target="_blank" rel="noopener noreferrer"><span class="browser-brand-icon"><img src="https://cdn.simpleicons.org/ecosia/559B51" alt="Ecosia logo" data-fallback="E" loading="lazy"></span><span class="browser-brand-copy"><b>Ecosia</b><small>Search with impact ↗</small></span><span class="browser-brand-arrow">↗</span></a>
-        </div>
-      </div>
-      <div class="nexora-ai-hub-wrap">
-        <article class="nexora-ai-card ai-hub-card">
-          <div class="nexora-ai-card-top"><span class="nexora-ai-orb">✦</span><span class="nexora-ai-label">02 / AI HUB</span></div>
-          <h3>Five AIs.<br><span>Your choice.</span></h3>
-          <p>Open the AI assistant that fits the task, all from one Nexora workspace.</p>
-          <div class="ai-provider-mini-grid">
-            <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT logo" data-local-fallback="assets/brand-chatgpt.svg" loading="eager" onerror="this.onerror=null;this.src='assets/brand-chatgpt.svg';"><span>ChatGPT</span></a>
-            <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/googlegemini/8E75FF" alt="" loading="lazy"><span>Gemini</span></a>
-            <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/claude/D97757" alt="" loading="lazy"><span>Claude</span></a>
-            <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Microsoft Copilot logo" data-local-fallback="assets/brand-copilot.svg" loading="eager" onerror="this.onerror=null;this.src='assets/brand-copilot.svg';"><span>Copilot</span></a>
-            <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/perplexity/20B8CD" alt="" loading="lazy"><span>Perplexity</span></a>
-          </div>
-          <span class="nexora-ai-footer">EXTERNAL AI PROVIDERS · ONE HUB</span>
-        </article>
-</div>
-      <p class="browser-suite-note">Web Suite includes Google, DuckDuckGo, Bing, Brave Search and Ecosia. AI Hub brings ChatGPT, Gemini, Claude, Copilot and Perplexity together. Each AI remains its own external service.</p>
-    </section>
+<section class="band"><div class="wrap split">
+ <div class="copy"><div class="eyebrow">For developers</div><h2>A browser that switches modes with you</h2><p class="sub">Turn on Developer mode for a terminal-style interface, a live status strip and quick access to DevTools.</p>
+  <ul><li>Matrix-style boot sequence and a power-up sound.</li><li>Monospace interface with a glowing green accent.</li><li>Switch back to the normal look at any time.</li></ul></div>
+ <div class="shot"><img loading="lazy" src="assets/shot-dev.webp" width="1440" height="900" alt="Nexora in Developer mode with green terminal styling"></div>
+</div></section>
 
-    <section class="download-section shell" id="downloads"><div class="download-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> GET NEXORA</div><h2>Pick your <span>platform.</span></h2></div><p>Choose your device below. The download links are checked against the latest public GitHub release.</p></div>
-      <div class="download-grid">
-        <article class="download-card windows-card"><div class="download-card-head"><div class="os-icon windows-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 5.1 10.4 4v7H2.5V5.1Zm9.2-1.3 9.8-1.4V11h-9.8V3.8ZM2.5 12.5h7.9v7l-7.9-1.2v-5.8Zm9.2 0h9.8v8.6l-9.8-1.4v-7.2Z" fill="currentColor"/></svg></div><span class="os-label">DESKTOP EDITION <i></i></span></div><div class="download-title"><h3>Nexora for Windows</h3><span class="build-tag" id="desktopVersion">Checking build</span></div><p class="download-description">Bring your browsing to your Windows PC.</p><div class="download-specs"><span>Windows 10 / 11</span><span class="spec-dot"></span><span id="desktopFileType">EXE</span><span class="spec-size" id="desktopSize"></span></div><a class="button button-download" id="desktopDownload" href="https://github.com/Techman-cyber/Nexora/releases" target="_blank" rel="noopener noreferrer"><span>Download for Windows</span><b>↓</b></a><div class="download-status"><span class="status-dot" id="desktopStatus"></span><span id="desktopNote">Checking the latest release…</span></div><div class="card-bottom"><span>01</span><span>WINDOWS BUILD</span></div></article>
-        <article class="download-card android-card"><div class="download-card-head"><div class="os-icon android-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 8.2 5.8 5.8l.9-.5 1.4 2.4a8.1 8.1 0 0 1 7.8 0l1.4-2.4.9.5-1.4 2.4a6.4 6.4 0 0 1 2.5 5H4.7a6.4 6.4 0 0 1 2.5-5ZM8 10.4a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Zm8 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4ZM5.3 14.2h13.4v4.1a1.4 1.4 0 0 1-1.4 1.4h-.8v2.1a1.1 1.1 0 0 1-2.2 0v-2.1h-4.6v2.1a1.1 1.1 0 0 1-2.2 0v-2.1h-.8a1.4 1.4 0 0 1-1.4-1.4v-4.1ZM2.6 14.3a1.2 1.2 0 0 1 2.4 0v3.4a1.2 1.2 0 0 1-2.4 0v-3.4Zm16.4 0a1.2 1.2 0 0 1 2.4 0v3.4a1.2 1.2 0 0 1-2.4 0v-3.4Z" fill="currentColor"/></svg></div><span class="os-label mobile-label">MOBILE EDITION <i></i></span></div><div class="download-title"><h3>Nexora for Android</h3><span class="build-tag" id="androidVersion">Checking build</span></div><p class="download-description">Take Nexora with you on your Android phone.</p><div class="download-specs"><span>Android</span><span class="spec-dot"></span><span id="androidFileType">APK</span><span class="spec-size" id="androidSize"></span></div><a class="button button-download button-android" id="androidDownload" href="https://github.com/Techman-cyber/Nexora/releases" target="_blank" rel="noopener noreferrer"><span>Download for Android</span><b>↓</b></a><div class="download-status"><span class="status-dot" id="androidStatus"></span><span id="androidNote">Checking the latest release…</span></div><div class="card-bottom"><span>02</span><span>ANDROID BUILD</span></div></article>
-      </div>
-      <div class="release-banner" id="about-release"><div class="release-banner-icon">↗</div><div class="release-banner-copy"><span class="banner-kicker">OPEN BY DESIGN</span><h3>Want the details before you download?</h3><p>Read the release notes, check the files, or explore the source code on GitHub.</p></div><a id="allReleases" href="https://github.com/Techman-cyber/Nexora/releases" target="_blank" rel="noopener noreferrer" class="release-button">Explore releases <span>↗</span></a></div>
-      <p class="release-hint" id="releaseHint" aria-live="polite">Connecting to the latest public release…</p>
-    </section>
-    <section class="last-word"><div class="shell last-word-inner"><div class="last-word-logo"><img src="assets/Nexora-mark.png" alt="Nexora logo"></div><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT WINDOW</div><h2>Ready when <span>you are.</span></h2></div><a class="button button-primary" href="#downloads">Get started <span>↑</span></a></div></section>
-  </main>
-  <footer class="site-footer shell"><a class="brand footer-brand" href="#home"><span class="brand-mark"><img src="assets/Nexora-mark.png" alt="Nexora logo"></span><span class="brand-name">nexora<span>.</span><small>BROWSER</small></span></a><span class="footer-note">A fresh place to start exploring.</span><div class="footer-links"><a href="https://github.com/Techman-cyber/Nexora" target="_blank" rel="noopener noreferrer" id="footerSource">GitHub <span>↗</span></a><a href="#downloads">Downloads ↑</a></div><span class="copyright">© <span id="year"></span> Nexora</span></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <div class="command-overlay" id="commandOverlay" role="dialog" aria-modal="true" aria-label="Quick navigation">
-    <div class="command-dialog">
-      <div class="command-input-row"><span aria-hidden="true">⌕</span><input class="command-input" id="commandInput" type="text" placeholder="Jump to a section or search the web…" autocomplete="off" aria-label="Quick navigation search"></div>
-      <div class="command-list" id="commandList">
-        <button class="command-option" data-action="section" data-target="features"><span class="command-symbol">✦</span><span>Explore the experience<small>See what Nexora is about</small></span></button>
-        <button class="command-option" data-action="section" data-target="browser-suite"><span class="command-symbol">⌕</span><span>Open Web Suite + AI Hub<small>Search engines and AI assistants</small></span></button>
-        <button class="command-option" data-action="section" data-target="downloads"><span class="command-symbol">↓</span><span>Get Nexora<small>Windows and Android downloads</small></span></button>
-        <button class="command-option" data-action="url" data-url="https://github.com/Techman-cyber/Nexora/releases"><span class="command-symbol">↗</span><span>View all releases<small>Release files and changelog</small></span></button>
-      </div>
-      <div class="command-footer"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate · <kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
-    </div>
-  </div>
-  <div id="scrollProgress" aria-hidden="true"></div>
-  <script src="config.js?v=6"></script><script src="script.js?v=6"></script><script src="enhancements.js?v=1"></script>
-</body></html>
+<section><div class="wrap split rev">
+ <div class="copy"><div class="eyebrow">Your account, your choice</div><h2>Sign in, or just start browsing</h2><p class="sub">Create an account with email, Google, GitHub or Yahoo to personalise Nexora, or continue as a guest. You never need an account to browse.</p>
+  <ul><li>Secure sign-in provided by Firebase Authentication.</li><li>Your history and bookmarks stay on your device.</li><li>Customise your avatar, colour and display name.</li></ul></div>
+ <div class="shot"><img loading="lazy" src="assets/shot-signin.webp" width="1440" height="900" alt="The Nexora sign-in and sign-up screen"></div>
+</div></section>
+
+<section id="download" class="band"><div class="wrap center">
+ <div class="eyebrow">Download</div><h2>Get Nexora</h2><p class="sub">Version <span data-version>0.9.7</span>. Free to use.</p>
+ <div class="dl"><div class="card"><div class="ic" style="margin:0 auto 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5 11 4v7H3zM13 3.7 21 2.5V11h-8zM3 13h8v7l-8-1.5zM13 13h8v8.5l-8-1.2z"/></svg></div><h3>Windows 10 / 11</h3><p>64-bit installer</p><p style="margin-top:18px"><a class="btn primary" data-dl href="#">Download</a></p></div>
+ <div class="card dim"><h3 style="margin-top:12px">macOS and Linux</h3><p>Not available yet.</p><span class="chip">Coming later</span></div></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <div class="center"><div class="eyebrow">Questions</div><h2>Good to know</h2></div>
+ <div class="faq">
+  <details><summary>Is Nexora free?</summary><p>Yes. Nexora is free to download and use.</p></details>
+  <details><summary>Does it work with Chrome extensions?</summary><p>Many do. Open the Chrome Web Store inside Nexora and click Add to Nexora. Nexora runs on Electron, which supports only part of Chrome's extension system, so some extensions will not work. VPN extensions that depend on Chrome's proxy feature cannot work. Use a VPN app on your PC instead.</p></details>
+  <details><summary>Will it block every ad?</summary><p>No ad blocker can promise that. Nexora blocks known ad and tracker networks, hides empty ad boxes and skips YouTube video ads. Ads served from a site's own domain can still appear.</p></details>
+  <details><summary>What data does Nexora collect?</summary><p>Your history, bookmarks and settings stay on your device. If you sign in, your email and name are handled by Firebase Authentication. Read the <a href="privacy.html" style="color:var(--accent2)">privacy page</a> for details.</p></details>
+  <details><summary>Does Nexora have voice search?</summary><p>On Windows, the microphone button uses Windows speech recognition. It needs a working microphone and, for the best results, the Windows setting "Online speech recognition" turned on. Settings in Nexora include a voice check that tells you what is missing.</p></details>
+  <details><summary>Can I use it without an account?</summary><p>Yes. Choose "Continue as guest" on the welcome screen.</p></details>
+ </div>
+</div></section>
+
+<section class="final band"><div class="wrap"><h2>Ready for a calmer web?</h2><p class="sub" style="margin:0 auto 26px">Download Nexora and make the browser your own.</p><a class="btn primary" data-dl href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5 11 4v7H3zM13 3.7 21 2.5V11h-8zM3 13h8v7l-8-1.5zM13 13h8v8.5l-8-1.2z"/></svg><span data-os-label>Download for Windows</span></a></div></section>
+</main><footer><div class="wrap"><span>&copy; <span id="year">2026</span> Nexora. All rights reserved.</span><span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="index.html#faq">FAQ</a> &nbsp;·&nbsp; <a href="index.html#download">Download</a></span></div></footer>
+<script src="site.js"></script></body></html>

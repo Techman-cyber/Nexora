@@ -1,35 +1,25 @@
-# Nexora Browser — Official Website
+# Nexora website
 
-A responsive product landing page for Nexora Browser, inspired by the editorial storytelling, large product visuals, feature showcases, and multi-platform download flow used by polished browser brands. This is an original Nexora design and does not use Opera branding or assets.
+A fast, static website (HTML, CSS, a little JavaScript). No build step.
+
+## Before you publish
+1. Open `site.js` and set `windowsUrl` to your installer download page (for example your GitHub Releases page) and `version`.
+2. Open `privacy.html` and replace `privacy@YOUR-DOMAIN.com`.
+3. Build the Windows installer from the app folder with `npm run dist:win` and upload the `.exe` from `dist/` to your release.
+
+## Deploy free on Firebase Hosting (you already have the project)
+```
+npm install -g firebase-tools
+firebase login
+firebase deploy --only hosting
+```
+The site is served at `https://nexora-browser-app.web.app`. Add your own domain in Firebase Console > Hosting > Add custom domain.
+
+## Other free options
+- **GitHub Pages:** push this folder to a repository and enable Pages (Settings > Pages).
+- **Netlify or Cloudflare Pages:** drag the folder into the dashboard.
 
 ## Files
-- `index.html` — website structure and product showcase
-- `style.css` — responsive visual design, animation, and browser/device mockups
-- `script.js` — mobile navigation and latest GitHub Release lookup
-- `config.js` — GitHub repository and asset matching settings
-- `assets/Nexora.png` — transparent Nexora logo and social-preview image
-- `assets/favicon.png` and root `favicon.ico` — refreshed transparent favicon assets; `assets/favicon.svg` is the fallback
-
-## Publish with GitHub Pages
-1. Download and extract this ZIP.
-2. Upload the **contents** of the `Nexora-Download-Website` folder to the root of your website repository.
-3. Commit and push the files.
-4. In GitHub, open **Settings → Pages** and choose the correct branch and `/ (root)` if Pages is not already configured.
-
-## Release downloads
-The page checks the latest public release in `Techman-cyber/Nexora` and looks for an `.exe` file for Windows and an `.apk` file for Android. If no APK is present, the optional ZIP fallback may be shown and is explicitly labelled as a ZIP archive, not an installable package. Publish actual release assets to activate direct download buttons.
-
-Update `config.js` if the release repository changes. This is a static website and does not deploy itself; publish the files to your website repository to make the changes live.
-
-
-Brand assets: `assets/Nexora.png` is the cleaned transparent 1024px mark/social-preview image; `assets/Nexora-mark.png` is the clean transparent 512px mark used around the site; `assets/Nexora-source-upload.png` preserves your original upload unchanged. `assets/favicon.png` and root `favicon.ico` contain the refreshed favicon.
-
-
-## Search and AI workspaces
-- **Web Suite:** Google, DuckDuckGo, Bing, Brave Search, and Ecosia.
-- **AI Hub:** ChatGPT, Google Gemini, Claude, Microsoft Copilot, and Perplexity.
-
-## Branding update
-- The logo assets now use the supplied Nexora artwork with the charcoal background removed and transparent edges. The original upload is preserved as `assets/Nexora-source-upload.png`.
-- The favicon is explicitly versioned as `assets/favicon.png?v=6` in `index.html`; if a browser still shows the old icon after deployment, hard refresh the page or clear that site’s cached favicon.
-- Web Suite lists Google, DuckDuckGo, Bing, Brave Search, and Ecosia. AI Hub presents ChatGPT, Gemini, Claude, Copilot, and Perplexity.
+- `index.html` home page, `privacy.html`, `404.html`
+- `site.css`, `site.js`
+- `assets/` logo, icon, screenshots (WebP) and `og.jpg` for link previews
