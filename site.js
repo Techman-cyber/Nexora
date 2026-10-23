@@ -1,6 +1,6 @@
 /* ---- Edit these two lines when you publish a release ---- */
 var NEXORA = {
-  version: '0.9.8',
+  version: '0.10.0',
   // Put your installer on GitHub Releases (or any file host) and paste the page or file link here:
   windowsUrl: 'https://github.com/YOUR-USERNAME/nexora/releases/latest'
 };
