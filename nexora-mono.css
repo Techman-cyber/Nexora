@@ -1,0 +1,91 @@
+/* Nexora monochrome theme: loads AFTER style.css. Remove its <link> in index.html to restore the original look. */
+:root{--bg:#000;--panel:#0a0a0a;--panel2:#111;--text:#fff;--muted:#a3a3a3;--soft:#737373;--line:rgba(255,255,255,.16);--purple:#fff;--green:#fff;--blue:#d4d4d4;--mx:50vw;--my:30vh}
+body{background:#000!important;color:#fff}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(55vw 45vh at 85% 0%,rgba(255,255,255,.09),transparent 70%),radial-gradient(45vw 40vh at 0% 55%,rgba(255,255,255,.05),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(340px circle at var(--mx) var(--my),rgba(255,255,255,.07),transparent 70%)}
+.page-glow{background:#fff!important;opacity:.06!important}.glow-b{opacity:.04!important}
+#scrollProgress{position:fixed;top:0;left:0;height:3px;z-index:99;background:#fff}
+::selection{background:#fff;color:#000}
+img[src*="simpleicons"],.brand-mark img,.mini-brand-icon,.home-logo img,.phone-logo img,.manifesto-mark img,.last-word-logo img{filter:grayscale(1) contrast(1.1)}
+.browser-brand-icon img,.ai-provider-mini-grid img{filter:grayscale(1);transition:filter .25s}.browser-brand-card:hover img,.ai-provider-mini-grid a:hover img{filter:none}
+
+/* floating pill header (replaces the flat grey bar) */
+.site-header{position:sticky!important;top:14px;z-index:60!important;height:66px!important;margin-top:14px;padding:0 12px 0 14px;background:rgba(0,0,0,.82)!important;backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.22)!important;border-radius:999px;box-shadow:0 14px 40px rgba(0,0,0,.7)}
+.brand-mark{background:#fff!important;border:0!important;border-radius:50%!important;width:40px!important;height:40px!important;box-shadow:none!important}
+.brand-name{color:#fff}.brand-name>span{color:#fff!important}.brand-name small{color:#8a8a8a!important}
+.main-nav{gap:2px!important;padding:5px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.04)}
+.main-nav a{color:#bdbdbd!important;font-size:13px!important;font-weight:600;padding:8px 16px;border-radius:999px;transition:background .2s,color .2s}
+.main-nav a:hover{background:rgba(255,255,255,.12);color:#fff!important}
+.main-nav a.nav-active{background:#fff;color:#000!important}
+.header-cta{background:#fff!important;color:#000!important;border:0!important;border-radius:999px!important;padding:12px 20px!important;font-size:13px!important;transition:transform .2s,box-shadow .2s}
+.header-cta:hover{transform:scale(1.05);box-shadow:0 0 0 4px rgba(255,255,255,.2)}
+.menu-toggle{color:#fff!important}
+@media(max-width:960px){.main-nav{position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;padding:10px;background:#000!important;border:1px solid rgba(255,255,255,.22);border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.8)}.main-nav a{padding:14px 16px;font-size:15px!important}}
+
+/* type: accent words become outlined, no colour needed */
+.eyebrow{color:#bdbdbd!important}.eyebrow-line{background:#fff!important}
+.hero h1,.section-heading h2,.download-heading h2,.last-word h2,.browser-suite-heading h2,.showcase-intro h2,.faq-heading h2{color:#fff!important;font-weight:700!important}
+.hero h1 span,.section-heading h2 span,.download-heading h2 span,.last-word h2 span,.browser-suite-heading h2 span,.showcase-intro h2 span,.faq-heading h2 span{color:transparent!important;-webkit-text-stroke:2px #fff;text-stroke:2px #fff}
+.showcase-intro h2{font-family:var(--display);font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:-3.5px;margin:22px 0}
+.showcase-intro p,.section-heading>p,.download-heading>p,.browser-suite-heading>p{color:#a3a3a3!important}
+
+/* buttons */
+.button{border-radius:999px!important}
+.button-primary{background:#fff!important;color:#000!important;box-shadow:0 0 0 0 rgba(255,255,255,.3)!important}
+.button-primary:hover{background:#e6e6e6!important;box-shadow:0 0 0 6px rgba(255,255,255,.16)!important}
+.button-quiet{border:1px solid rgba(255,255,255,.3);padding-inline:20px!important;color:#fff!important}.button-quiet:hover{background:#fff!important;color:#000!important}.button-quiet:hover .github-mark{border-color:#000}
+.command-trigger{background:transparent;border:1px dashed rgba(255,255,255,.4);border-radius:999px;color:#d4d4d4;padding:12px 18px;font-size:12px;font-weight:600;cursor:pointer}.command-trigger:hover{border-color:#fff;color:#fff}.command-trigger kbd{background:#fff;color:#000;border-radius:5px;padding:2px 6px;font-size:10px;margin-left:6px}
+
+/* hero mock: pure greys */
+.app-window,.app-home{background:#0a0a0a!important}.app-window{border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 30px 90px rgba(0,0,0,.9),0 0 70px rgba(255,255,255,.07)!important;transition:transform .15s ease-out}
+.app-top{background:#141414!important}.tab{background:#222!important}.address-row{background:#000!important}.traffic i,.traffic i:nth-child(2),.traffic i:nth-child(3){background:#555!important}
+.app-home{background:radial-gradient(ellipse at 50% 25%,rgba(255,255,255,.1),transparent 60%),#0a0a0a!important}
+.visual-orbit,.orbit-two{border-color:rgba(255,255,255,.12)!important}
+.visual-tag,.floating-note{background:#fff!important;color:#000!important;border:0!important;border-radius:14px!important;box-shadow:0 14px 40px rgba(0,0,0,.6)!important}
+.floating-note :is(b,small),.visual-tag{color:#000!important}.floating-note small{color:#555!important}
+.tag-pulse{background:#000!important}.note-symbol,.note-symbol-green{background:#000!important;color:#fff!important}
+.floating-note{animation:bob 5s ease-in-out infinite alternate}.note-right{animation-delay:-2.5s}@keyframes bob{to{transform:translateY(-12px)}}
+.proof-icon,.proof-icon-green{color:#fff!important;border-color:rgba(255,255,255,.35)!important}.proof-divider{background:rgba(255,255,255,.2)!important}
+
+/* marquee */
+.marquee{overflow:hidden;padding:30px 0}
+.marquee-track{display:flex;width:max-content;background:#fff;color:#000;transform:rotate(-1.6deg);padding:16px 0;animation:scroll 30s linear infinite}
+.marquee-track span{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.5px;padding:0 26px;white-space:nowrap}
+@keyframes scroll{to{transform:rotate(-1.6deg) translateX(-50%)}}
+
+/* cards + sections */
+.why-section{background:#0a0a0a!important;border-block:1px solid rgba(255,255,255,.14)}
+.value-card,.browser-brand-card,.nexora-ai-card,.download-card,.release-banner,.showcase-panel,.principles-strip>div,.manifesto{background:#0a0a0a!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:22px!important;transition:border-color .25s,transform .25s,background .25s}
+.value-card:hover,.browser-brand-card:hover,.download-card:hover{border-color:#fff!important;transform:translateY(-4px)}
+.value-card-featured{background:#fff!important}.value-card-featured :is(h3,p,span,.value-index){color:#000!important}.value-card-featured .value-bottom i{background:#000!important}
+.value-icon,.icon-lilac,.icon-green,.icon-blue,.os-icon,.nexora-ai-orb,.suite-step,.release-banner-icon,.note-symbol{background:#fff!important;color:#000!important;border:0!important}
+.value-card-featured .value-icon{background:#000!important;color:#fff!important}
+.build-tag{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.4)!important}
+.banner-kicker,.os-label,.nexora-ai-label,.value-link,.showcase-number{color:#d4d4d4!important}
+.text-link{color:#fff!important;border-bottom:2px solid #fff}
+.showcase-art{background:radial-gradient(circle at 50% 30%,#1c1c1c,#050505)!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:18px!important}
+.art-glow,.phone-halo{background:#fff!important;opacity:.08!important}.mobile-float{background:#fff!important;color:#000!important;font-weight:700}
+.mini-browser,.phone-frame{border:1px solid rgba(255,255,255,.3)!important;background:#0a0a0a!important}
+.ai-provider-mini-grid a{background:#111!important;border:1px solid rgba(255,255,255,.16)!important;color:#fff!important;transition:background .2s,color .2s}.ai-provider-mini-grid a:hover{background:#fff!important;color:#000!important}.ai-provider-mini-grid a:hover span{color:#000!important}
+.status-dot.available{background:#fff!important;box-shadow:0 0 0 4px rgba(255,255,255,.18)}.status-dot.missing{background:#666!important}
+.button-download,.button-android{background:#fff!important;color:#000!important;box-shadow:none!important}.button-download:hover,.button-android:hover{background:#e6e6e6!important}
+.release-button{background:#fff!important;color:#000!important;border-radius:999px!important}
+.last-word{background:#fff!important;color:#000}.last-word h2{font-size:clamp(56px,9vw,130px)!important;color:#000!important}.last-word h2 span{-webkit-text-stroke:2px #000;text-stroke:2px #000}.last-word .eyebrow{color:#000!important}.last-word .eyebrow-line{background:#000!important}
+.last-word .button-primary{background:#000!important;color:#fff!important}.last-word-logo img{filter:grayscale(1)}
+
+/* FAQ */
+.faq-section{padding:110px 0 90px;position:relative;z-index:1}
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.faq-heading{position:sticky;top:110px}.faq-heading h2{font-family:var(--display);font-size:clamp(44px,5.4vw,72px);line-height:1;letter-spacing:-3px;margin:24px 0 20px}.faq-heading p{color:#a3a3a3;max-width:340px;font-size:15px}.faq-heading a{color:#fff;border-bottom:1px solid #fff}
+.faq-list{display:grid;gap:12px}
+.faq-item{border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#0a0a0a;transition:border-color .25s,background .25s}
+.faq-item:hover{border-color:rgba(255,255,255,.5)}.faq-item[open]{background:#fff;border-color:#fff}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.4px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:none;width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:20px;font-weight:400;transition:transform .3s,background .3s,color .3s}
+.faq-item[open] summary{color:#000}.faq-item[open] summary::after{transform:rotate(135deg);background:#000;color:#fff;border-color:#000}
+.faq-item p{margin:0;padding:0 26px 24px;color:#333;font-size:15.5px;line-height:1.7;max-width:62ch}
+.faq-item summary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:34px}.faq-heading{position:static}}
+:focus-visible{outline:2px solid #fff!important;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f4f5ff">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="Meet Nexora Browser. Explore the browser, choose your platform, and download the latest Windows or Android build from the official release.">
   <meta property="og:title" content="Nexora Browser — Your web, your way">
   <meta property="og:description" content="One home for Nexora on Windows and Android.">
@@ -12,13 +12,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=8">
-  <link rel="stylesheet" href="nexora-light.css?v=1">
+  <link rel="stylesheet" href="nexora-mono.css?v=1">
 </head>
 <body>
   <div class="page-glow glow-a"></div><div class="page-glow glow-b"></div>
   <header class="site-header shell">
     <a class="brand" href="#home" aria-label="Nexora home"><span class="brand-mark"><img src="assets/Nexora-mark.png" alt="Nexora logo"></span><span class="brand-name">nexora<span>.</span><small>BROWSER</small></span></a>
-    <nav class="main-nav" aria-label="Main navigation"><a href="#features">Experience</a><a href="#why-nexora">Why Nexora</a><a href="#browser-suite">Web Suite + AI</a><a href="#downloads">Downloads</a><a href="#about-release">Release notes</a></nav>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#features">Experience</a><a href="#why-nexora">Why Nexora</a><a href="#browser-suite">Web Suite + AI</a><a href="#downloads">Downloads</a><a href="#about-release">Release notes</a><a href="#faq">FAQ</a></nav>
     <a class="header-cta" href="#downloads">Get Nexora <span>↗</span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
   </header>
@@ -107,6 +107,7 @@
       <div class="release-banner" id="about-release"><div class="release-banner-icon">↗</div><div class="release-banner-copy"><span class="banner-kicker">OPEN BY DESIGN</span><h3>Want the details before you download?</h3><p>Read the release notes, check the files, or explore the source code on GitHub.</p></div><a id="allReleases" href="https://github.com/Techman-cyber/Nexora/releases" target="_blank" rel="noopener noreferrer" class="release-button">Explore releases <span>↗</span></a></div>
       <p class="release-hint" id="releaseHint" aria-live="polite">Connecting to the latest public release…</p>
     </section>
+    <section class="faq-section shell" id="faq"><div class="faq-wrap"><div class="faq-heading"><div class="eyebrow"><span class="eyebrow-line"></span> FAQ</div><h2>Questions,<br><span>answered.</span></h2><p>Can't find what you need? Open an issue on the <a href="https://github.com/Techman-cyber/Nexora" target="_blank" rel="noopener noreferrer">GitHub project</a>.</p></div><div class="faq-list"><details class="faq-item" open name="faq"><summary>Which devices does Nexora run on?</summary><p>Nexora has a Windows build for Windows 10 and 11, and an Android build for phones. Both are listed in the Downloads section.</p></details><details class="faq-item" name="faq"><summary>Where do the downloads come from?</summary><p>Every file is hosted on the official GitHub Releases page. This site checks the latest public release and links the matching Windows or Android file.</p></details><details class="faq-item" name="faq"><summary>Why does the Android button sometimes say ZIP?</summary><p>If the latest release has no APK, the site falls back to a ZIP archive if one exists. A ZIP can't be installed directly, so open GitHub Releases and look for an APK.</p></details><details class="faq-item" name="faq"><summary>What are Web Suite and AI Hub?</summary><p>Web Suite is a launchpad for five search engines: Google, DuckDuckGo, Bing, Brave Search and Ecosia. AI Hub does the same for ChatGPT, Gemini, Claude, Copilot and Perplexity.</p></details><details class="faq-item" name="faq"><summary>Do the AI assistants run inside Nexora?</summary><p>No. Each assistant is its own external service, and Nexora just gives you one place to open them. Their accounts, limits and terms are set by each provider.</p></details><details class="faq-item" name="faq"><summary>Can I see the source code?</summary><p>Yes. The project lives on GitHub, and the Explore the project button takes you there. You can also read release notes and file details on the same page.</p></details><details class="faq-item" name="faq"><summary>Is there a shortcut for jumping around this page?</summary><p>Press Ctrl K to open Quick jump. Type to move to a section or to search the web.</p></details></div></div></section>
     <section class="last-word"><div class="shell last-word-inner"><div class="last-word-logo"><img src="assets/Nexora-mark.png" alt="Nexora logo"></div><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT WINDOW</div><h2>Ready when <span>you are.</span></h2></div><a class="button button-primary" href="#downloads">Get started <span>↑</span></a></div></section>
   </main>
   <footer class="site-footer shell"><a class="brand footer-brand" href="#home"><span class="brand-mark"><img src="assets/Nexora-mark.png" alt="Nexora logo"></span><span class="brand-name">nexora<span>.</span><small>BROWSER</small></span></a><span class="footer-note">A fresh place to start exploring.</span><div class="footer-links"><a href="https://github.com/Techman-cyber/Nexora" target="_blank" rel="noopener noreferrer" id="footerSource">GitHub <span>↗</span></a><a href="#downloads">Downloads ↑</a></div><span class="copyright">© <span id="year"></span> Nexora</span></footer>
@@ -118,6 +119,7 @@
         <button class="command-option" data-action="section" data-target="features"><span class="command-symbol">✦</span><span>Explore the experience<small>See what Nexora is about</small></span></button>
         <button class="command-option" data-action="section" data-target="browser-suite"><span class="command-symbol">⌕</span><span>Open Web Suite + AI Hub<small>Search engines and AI assistants</small></span></button>
         <button class="command-option" data-action="section" data-target="downloads"><span class="command-symbol">↓</span><span>Get Nexora<small>Windows and Android downloads</small></span></button>
+        <button class="command-option" data-action="section" data-target="faq"><span class="command-symbol">?</span><span>Read the FAQ<small>Quick answers about Nexora</small></span></button>
         <button class="command-option" data-action="url" data-url="https://github.com/Techman-cyber/Nexora/releases"><span class="command-symbol">↗</span><span>View all releases<small>Release files and changelog</small></span></button>
       </div>
       <div class="command-footer"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate · <kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
