@@ -1,0 +1,86 @@
+/* Nexora: refined dark theme. Loads AFTER style.css. One accent (blue from the logo), neutral charcoal surfaces. */
+:root{--bg:#0b0d12;--panel:#12151c;--panel2:#181c25;--text:#f2f4f8;--muted:#9aa3b5;--soft:#7a8397;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);--accent:#4f6ef7;--accent-hi:#8ea6ff;--accent-bg:rgba(79,110,247,.14);--purple:#a9b8ff;--green:#8ea6ff;--blue:#8ea6ff}
+body{background:var(--bg)!important;color:var(--text)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 480px at 50% -80px,rgba(79,110,247,.16),transparent 70%)}
+.page-glow{display:none!important}
+#scrollProgress{position:fixed;top:0;left:0;height:2px;z-index:99;background:var(--accent)}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent-hi)!important;outline-offset:3px}
+
+/* header: calm floating bar */
+.site-header{position:sticky!important;top:12px;z-index:60!important;height:64px!important;margin-top:12px;padding:0 12px 0 16px;background:rgba(18,21,28,.82)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line2)!important;border-radius:16px}
+.brand-mark{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:10px!important;width:38px!important;height:38px!important}
+.brand-name{color:var(--text)}.brand-name>span{color:var(--accent-hi)!important}.brand-name small{color:var(--soft)!important}
+.main-nav{gap:4px!important}
+.main-nav a{color:var(--muted)!important;font-size:14px!important;font-weight:500;padding:8px 14px;border-radius:10px;transition:color .2s,background .2s}
+.main-nav a:hover{color:#fff!important;background:rgba(255,255,255,.06)}
+.main-nav a.nav-active{color:#fff!important;background:var(--accent-bg)}
+.header-cta{background:#fff!important;color:#0b0d12!important;border:0!important;border-radius:10px!important;padding:10px 18px!important;font-size:14px!important;font-weight:600;transition:background .2s}.header-cta:hover{background:#dfe4f0!important}
+.menu-toggle{color:#fff!important}
+@media(max-width:960px){.main-nav{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;padding:8px;background:var(--panel)!important;border:1px solid var(--line2);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.5)}.main-nav a{padding:13px 14px;font-size:15px!important}}
+
+/* type */
+.eyebrow{color:var(--accent-hi)!important;font-size:12px!important;letter-spacing:1.5px!important;font-weight:600!important}.eyebrow-line{background:var(--accent-hi)!important;width:22px!important}
+.hero h1,.section-heading h2,.download-heading h2,.last-word h2,.browser-suite-heading h2,.showcase-intro h2,.faq-heading h2{color:var(--text)!important;font-weight:600!important;letter-spacing:-2.5px!important;line-height:1.02!important}
+.hero h1 span,.section-heading h2 span,.download-heading h2 span,.last-word h2 span,.browser-suite-heading h2 span,.showcase-intro h2 span,.faq-heading h2 span{color:var(--accent-hi)!important;-webkit-text-stroke:0!important}
+.showcase-intro h2{font-family:var(--display);font-size:clamp(40px,5.4vw,68px);margin:20px 0}
+.hero-text,.showcase-intro p,.section-heading>p,.download-heading>p,.browser-suite-heading>p,.faq-heading p{color:var(--muted)!important;font-size:17px!important;line-height:1.7!important}
+
+/* buttons */
+.button{border-radius:10px!important;font-size:14.5px!important;font-weight:600!important;padding:14px 22px!important}
+.button-primary{background:var(--accent)!important;color:#fff!important;box-shadow:none!important}.button-primary:hover{background:#6580ff!important;transform:none!important}
+.button-quiet{background:transparent!important;border:1px solid var(--line2);padding-inline:20px!important;color:var(--text)!important}.button-quiet:hover{background:rgba(255,255,255,.06)!important}.github-mark{border-color:var(--line2)!important}
+.command-trigger{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:12px 16px;font-size:13px;cursor:pointer}.command-trigger:hover{color:#fff;border-color:var(--line2)}.command-trigger kbd{background:var(--panel2);border:1px solid var(--line2);color:var(--muted);border-radius:6px;padding:2px 7px;font-size:11px;margin-left:8px}
+.proof-icon,.proof-icon-green{background:var(--accent-bg)!important;color:var(--accent-hi)!important;border:0!important}.proof-divider{background:var(--line)!important}
+
+/* hero browser mock: flat, no tilt */
+.app-window{transform:none!important;background:var(--panel)!important;border:1px solid var(--line2)!important;box-shadow:0 30px 80px rgba(0,0,0,.55)!important}
+.app-top{background:var(--panel2)!important}.tab{background:#232834!important}.address-row{background:var(--bg)!important}
+.app-home{background:radial-gradient(ellipse at 50% 20%,rgba(79,110,247,.18),transparent 60%),var(--panel)!important}
+.visual-orbit{border-color:var(--line)!important}.orbit-two{display:none}
+.visual-tag,.floating-note{background:var(--panel2)!important;border:1px solid var(--line2)!important;border-radius:12px!important;box-shadow:0 12px 30px rgba(0,0,0,.4)!important;animation:none!important;color:var(--text)!important}
+.floating-note b{color:var(--text)!important}.floating-note small{color:var(--muted)!important}
+.tag-pulse{background:#4ade80!important}.note-symbol,.note-symbol-green{background:var(--accent-bg)!important;color:var(--accent-hi)!important}
+.visual-caption,.hero-bottom-line{color:var(--soft)!important}.caption-rule{background:var(--line)!important}
+
+/* sections + cards */
+.why-section{background:var(--panel)!important;border-block:1px solid var(--line)}
+.value-card,.browser-brand-card,.nexora-ai-card,.download-card,.release-banner,.showcase-panel,.principles-strip>div,.manifesto{background:var(--panel)!important;border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:none!important;transition:border-color .2s,background .2s}
+.why-section .value-card,.why-section .manifesto{background:var(--bg)!important}
+.value-card:hover,.browser-brand-card:hover,.download-card:hover{border-color:var(--line2)!important;transform:none!important}
+.value-card-featured{background:var(--accent-bg)!important;border-color:rgba(142,166,255,.4)!important}
+.value-icon,.icon-lilac,.icon-green,.icon-blue,.os-icon,.windows-icon,.android-icon,.nexora-ai-orb,.suite-step,.release-banner-icon{background:var(--accent-bg)!important;color:var(--accent-hi)!important;border:0!important}
+.value-index,.value-bottom span,.value-link,.showcase-number,.nexora-ai-label,.nexora-ai-footer,.card-bottom span,.os-label,.banner-kicker{color:var(--soft)!important}
+.value-bottom i{background:var(--line2)!important}
+.manifesto p span{color:var(--accent-hi)!important}
+.text-link{color:var(--accent-hi)!important;font-weight:600}
+.showcase-art{background:radial-gradient(circle at 50% 0%,rgba(79,110,247,.18),transparent 65%),var(--panel2)!important;border:1px solid var(--line)!important;border-radius:14px!important}
+.art-glow,.phone-halo,.art-orbit{opacity:.12!important}.mobile-float{background:var(--panel)!important;color:var(--text)!important;border:1px solid var(--line2)!important}
+.mini-browser,.phone-frame{background:var(--panel)!important;border:1px solid var(--line2)!important;box-shadow:0 20px 50px rgba(0,0,0,.45)!important}
+.browser-brand-icon{background:var(--panel2)!important;border:1px solid var(--line)!important}.browser-brand-arrow{color:var(--soft)!important}
+.ai-provider-mini-grid a{background:var(--panel2)!important;border:1px solid var(--line)!important;color:var(--text)!important;border-radius:12px!important}.ai-provider-mini-grid a:hover{border-color:var(--accent-hi)!important;background:var(--accent-bg)!important}
+
+/* downloads */
+.build-tag{background:var(--accent-bg)!important;color:var(--accent-hi)!important;border:0!important}
+.status-dot.available{background:#4ade80!important;box-shadow:0 0 0 3px rgba(74,222,128,.18)}
+.button-download,.button-android{background:var(--accent)!important;color:#fff!important;box-shadow:none!important}.button-download:hover,.button-android:hover{background:#6580ff!important}
+.release-button{background:#fff!important;color:#0b0d12!important;border-radius:10px!important}.release-button:hover{background:#dfe4f0!important}
+
+/* last word */
+.last-word{background:var(--panel)!important;border-top:1px solid var(--line);padding:90px 0}
+.last-word h2{font-size:clamp(44px,6vw,84px)!important}.last-word-logo img{filter:none}
+
+/* FAQ */
+.faq-section{padding:110px 0 90px;position:relative;z-index:1}
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.faq-heading{position:sticky;top:110px}.faq-heading h2{font-family:var(--display);font-size:clamp(40px,5vw,64px);margin:22px 0 18px}.faq-heading p{max-width:340px;font-size:15px!important}.faq-heading a{color:var(--accent-hi);border-bottom:1px solid currentColor}
+.faq-list{display:grid;gap:10px}
+.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--panel);transition:border-color .2s,background .2s}
+.faq-item:hover{border-color:var(--line2)}.faq-item[open]{background:var(--panel2);border-color:rgba(142,166,255,.4)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 24px;font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.3px;color:var(--text)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:var(--accent-bg);color:var(--accent-hi);font-size:20px;font-weight:400;transition:transform .25s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin:0;padding:0 24px 22px;color:var(--muted);font-size:15.5px;line-height:1.7;max-width:62ch}
+@media(max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:32px}.faq-heading{position:static}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
